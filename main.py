@@ -55,13 +55,32 @@ def welsh_powell_graph_colouring_algorithm(graph, deg_ver):
 
 # Driver Code
 if __name__ == '__main__':
-    g = [[] for i in range(5)]
+    g = [[] for i in range(13)]
+    # don't repeat same vertices twice
+    # because this program is intended for non-directed graph
+    # ex: if input (0v -> 1v) don't need to add (1v -> 0v)
     g = add_edge(g, 0, 1)
-    g = add_edge(g, 0, 2)
+    g = add_edge(g, 0, 6)
+    g = add_edge(g, 0, 7)
+    g = add_edge(g, 1, 7)
+    g = add_edge(g, 1, 8)
     g = add_edge(g, 1, 2)
-    g = add_edge(g, 1, 3)
+    g = add_edge(g, 2, 8)
+    g = add_edge(g, 2, 9)
     g = add_edge(g, 2, 3)
+    g = add_edge(g, 3, 9)
+    g = add_edge(g, 3, 10)
     g = add_edge(g, 3, 4)
-    g = add_edge(g, 3, 0)
-
+    g = add_edge(g, 4, 10)
+    g = add_edge(g, 4, 11)
+    g = add_edge(g, 4, 5)
+    g = add_edge(g, 5, 11)
+    g = add_edge(g, 5, 12)
+    g = add_edge(g, 6, 7)
+    g = add_edge(g, 7, 8)
+    g = add_edge(g, 8, 9)
+    g = add_edge(g, 9, 10)
+    g = add_edge(g, 10, 11)
+    g = add_edge(g, 11, 12)
+    print(g)
     welsh_powell_graph_colouring_algorithm(g, find_degree(g))
